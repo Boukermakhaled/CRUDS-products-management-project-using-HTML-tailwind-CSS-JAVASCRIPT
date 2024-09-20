@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="flex justify-center h-screen bg-black">
+   <div class="container text-white flex items-center py-2 flex-col gap-2">
+    <div class="title text-center">
+        <h1 class="text-center flex justify-center font-bold text-2xl">CRUDS</h1>
+        <h1 class="text-center">PRODUCTS MANAGEMENT SYSTEM</h1>
+    </div>
+    <div class="sectionOne flex flex-col gap-3">
+        <div class="tt">
+        <input type="text" class="title-1 w-full h-[40px] invalid:border-red-600 " placeholder="title" id="title" >
+    </div>
+        <div class="tot flex flex-row gap-4 mx-6">
+            <input type="text" placeholder="Price" id="Price" onkeyup="totPrice()" class="invalid:border-red-500"  >
+            <input type="text"  id="taxes" onkeyup="totPrice()">
+            <input type="text"  id="ads" onkeyup="totPrice()">
+            <input type="text"  id="discount" onkeyup="totPrice()">
+            <h2 class="bg-red-800 p-2 rounded-lg" id="total-m" onkeyup="totPrice()">Total: <span id="total" onkeyup="totPrice()"></span></h2>
+        </div>
+        <input type="number" placeholder="Amount" id="amount">
+        <input type="text" placeholder="Category" id="category" >
+        <button class="create w-full bg-purple-900 h-[35px] rounded-full text-lg font-[600]" id="submit">Create</button>
+        <div class="searsh flex flex-col gap-3">
+            <input type="text" placeholder="Searsh" id="searsh-i" onkeyup="searchFunc(this.value)">
+            <div class="searButt flex flex-row justify-between">
+                <button class="bg-purple-900 h-[35px] rounded-full text-lg font-[600] w-[45%]" id="search-t" onclick="getSearchMode(this.id)">searsh By Title </button>
+                <button class="bg-purple-900 h-[35px] rounded-full text-lg font-[600] w-[45%]" id="search-c" onclick="getSearchMode(this.id)">searsh By Category</button>
+            </div>
+            
+        </div>
+        <div class="dellAll" id="dellAll">
+
+        </div>
+    </div>
+    
+    <div class="tab">
+        <table class="border-separate border-spacing-x-7 border-spacing-y-3 gap-5" >
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>TITLE</th>
+                <th>PRICE</th>
+                <th>TAXES</th>
+                <th>ADS</th>
+                <th>DISCOUNT</th>
+                <th>TOTAL</th>
+                <th>CATEGORY</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+   </div>
+   <script src="main.js"></script>
+   <link rel="stylesheet" href="input.css">
+</body>
+</html>
